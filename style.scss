@@ -23,7 +23,7 @@
     animation: waves 1s ease-in-out infinite;
 
     position: fixed;
-    z-index: 999;
+    z-index: 1;
     top: 33%;
     left: 50%;
   }
@@ -77,6 +77,10 @@
   &__bottom {
     background-color: #fff;
     padding: 100px;
+
+    z-index: 999;
+    position: relative;
+
   }
 }
 
