@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+.parallax-waves {
+  &__top {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #3586ff;
+  }
+
+  &__mouse {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    transform: translateX(-50%) translateY(-50%);
+    animation: waves 1s ease-in-out infinite;
+
+    position: fixed;
+    z-index: 999;
+    top: 33%;
+    left: 50%;
+  }
+
+  &__item {
+    width: 100%;
+    height: 9%;
+    background-size: 45%;
+    background-image: url(wave.svg);
+    background-position: left;
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: waves 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.33s);
+    &#wave1 {
+      z-index: 9;
+      opacity: 0.7;
+      background-position-x: 300px;
+    }
+    &#wave2 {
+      z-index: 99;
+      opacity: 0.6;
+      background-position-x: 250px;
+    }
+    &#wave3 {
+      z-index: 999;
+      opacity: 0.8;
+      background-position-x: 200px;
+    }
+    &#wave4 {
+      z-index: 9999;
+      opacity: 0.5;
+      background-position-x: 150px;
+    }
+  }
+
+  &__text,
+  &__title {
+    color: #111;
+  }
+  &__title {
+    font-size: 3em;
+  }
+  &__text {
+    font-size: 1.2em;
+
+    margin-top: 2em;
+  }
+  &__bottom {
+    background-color: #fff;
+    padding: 100px;
+  }
+}
+
+@keyframes waves {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(16%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
